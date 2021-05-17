@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="main_posts">
+    <div *ngFor="let posts of HometableService.posts; let i = index">
+      <div class="surface">
+        <h1>
+          {{posts.title}}
+        </h1>
+        <div class="content">
+          {{posts.text}}
+        </div>
+        <button style="margin-top: 20px" (click)="this.onADDCompite(posts)">
+          перейти
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="">
+    <button routerLink="/add">
+      Добавить +
+    </button>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-top: 50px;
+}
+#exampleInputTextPost1{
+  height: 200px;
+  display:inline-block;
+  padding:15px 10px;
+  line-height:140%;
+}
+.container{
+  width: 900px;
+}

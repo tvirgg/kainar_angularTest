@@ -1,0 +1,33 @@
+.main{
+  padding: 20px;
+  width: 820px;
+  background: #e3dddd;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+}
+.main_posts{
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+.surface{
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin: 40px
+}
+.content{
+  width: 100%;
+  height: 150px;
+  text-align: center;
+  vertical-align: center;
+  border: black 2px solid;
+  background: white;
+}
+button{
+  background: #b6c3db;
+  height: 30px;
+  float: right;
+}
