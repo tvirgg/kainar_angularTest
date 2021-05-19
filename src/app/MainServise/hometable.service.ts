@@ -1,4 +1,4 @@
-import {Injectable, Input} from "@angular/core";
+import {Injectable} from "@angular/core";
 
 export interface Posts{
   id: number
@@ -6,49 +6,39 @@ export interface Posts{
   text: string
 }
 
-
-
-
-
 @Injectable({providedIn:'root'})
 
 export class HometableService {
-   public posts: Posts[] =[
+   public posts: Posts[] =[ //posts array
     {id: 1, title: 'first post', text: 'Hello its first post'},
     {id: 2, title: 'second post', text: 'Hello its second post'},
     {id: 3, title: 'third post', text: 'Hello its third post'},
     {id: 4, title: 'fourth post', text: 'Hello its fourth post'}
   ]
-  public cutent_changepost_id: number = 0
-  public cutent_title: string =''
-  public cutent_text: string =''
-
+  public curPost: Posts = { id: 0, title: '', text: ''}//current post field
   public Changecutent_changepost_id( obj: object) {
     // @ts-ignore
-    this.cutent_changepost_id= obj.id;
+    this.curPost.id= obj.id;//CONFIGURATION OF CURRENT POST OBJECT DATA
     // @ts-ignore
-    this.cutent_title= obj.title;
+    this.curPost.title= obj.title;
     // @ts-ignore
-    this.cutent_text= obj.text;
-    console.log(this.cutent_changepost_id);
+    this.curPost.text= obj.text;
   }
-  public DelitCurentPost() {//deleting
+  public DelitCurentPost() {//deleting from array of posts func
     // @ts-ignore
-    this.posts = this.posts.filter((item) => item.id !== this.cutent_changepost_id);
-  }
-
-  public ChangeCurentPost( title: string, text: string) {//changing
-    // @ts-ignore
-    this.posts.find(own_g => own_g.id === this.cutent_changepost_id).text = text;
-    // @ts-ignore
-    this.posts.find(own_g => own_g.id === this.cutent_changepost_id).title = title;
-    console.log(this.posts);
+    this.posts = this.posts.filter((item) => item.id !== this.curPost.id);
   }
 
-  public ChangeCurent( title: string, text: string) {//creating post
-    let Post = {id: (((this.posts)[this.posts.length - 1].id) + 1), text: text, title: title};
+  public ChangeCurentPost(id: number, title: string, text: string) {//changing of current post
+    // @ts-ignore
+    this.posts.find(own_g => own_g.id === this.curPost.id).text = text;
+    // @ts-ignore
+    this.posts.find(own_g => own_g.id === this.curPost.id).title = title;
+  }
+
+  public CreatePost(title: string, text: string) {//creating new post func
+    let Post = {id: (((this.posts)[this.posts.length - 1].id) + 1), text: text, title: title};//id is inc 1 of last id
     this.posts.push(Post);
-    console.log(this.posts);
   }
 
 }

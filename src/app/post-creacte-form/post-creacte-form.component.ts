@@ -20,10 +20,7 @@ export class PostCreacteFormComponent implements OnInit {
   ngOnInit(): void {
   }
   onSubmit(){
-    this.onADDCompite(this.form.value.Text, this.form.value.Title)
-  }
-  onADDCompite(title:string, text: string): void {
-    this.appConfiguration.ChangeCurent(title,text);
-    this.router.navigate([`home`])
+    this.appConfiguration.CreatePost(this.form.value.Title, this.form.value.Text);
+    this.router.navigate([`home`])//going to home component
   }
 }

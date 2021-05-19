@@ -9,16 +9,16 @@
         <form name="form" [formGroup]="form" (ngSubmit)="form.valid && onSubmit()">
           <div class="form-group">
             <label for="Title">Title</label>
-            <input type="text"  class="form-control" formControlName="Title" [placeholder]="appConfiguration.cutent_title"  />
+            <input type="text"  class="form-control" formControlName="Title" [placeholder]="appConfiguration.curPost.title"  />
           </div>
           <div class="form-group">
             <label for="Text">Text</label>
-            <textarea [placeholder]="appConfiguration.cutent_text"
+            <textarea [placeholder]="appConfiguration.curPost.text"
               type="text" class="form-control" formControlName="Text" required id="exampleInputTextPost1"
             ></textarea>
           </div>
           <div class="buttons">
-            <button  style="margin-bottom: 20px; padding: 10px 20px" class="btn btn-danger" (click)="clickMethod(appConfiguration.cutent_title)">
+            <button  style="margin-bottom: 20px; padding: 10px 20px" class="btn btn-danger" (click)="clickMethod(appConfiguration.curPost.title)">
               Удалить
             </button>
             <div class="form-group">

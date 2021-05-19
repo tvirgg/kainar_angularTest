@@ -9,17 +9,11 @@ import {Router} from "@angular/router";
 })
 export class HomeTableComponent implements OnInit {
 
-  constructor(public HometableService: HometableService, private router: Router) { }
+  constructor(public HometableService: HometableService, private router: Router) {}
   onADDCompite(obj: object): void {
     this.HometableService.Changecutent_changepost_id(obj);
     this.router.navigate([`addit`])
   }
   ngOnInit(): void {
-    console.log(this.HometableService);
   }
-
-///addNeWpOST( post: object){
-//this.HometableService.addNeWpOST(post);
-//}
-
 }
